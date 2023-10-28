@@ -21,6 +21,25 @@ Assignment of data points to the nearest centroid.
 Update of centroids as the mean of data points assigned to each cluster.
 Repeat steps 2 and 3 until no significant change in assignments.
 
+Example:
+import numpy as np
+from sklearn.neighbors import KNeighborsClassifier
+
+xtrain=np.array([ [170,65],[180,85],[165,55],[176,75],[160,60]])
+ytrain=["Body Builder","Body Builder","Non-Body Builder","Body Builder","Non-Body Builder"]
+knn=KNeighborsClassifier(n_neighbors=3)
+knn.fit(xtrain,ytrain)
+print("Tell me you friend name?")
+name=input()
+print("what is his height?")
+height=int(input())
+print("what is his weight?")
+weight=int(input())
+
+result=np.array([[height,weight]])
+prediction=knn.predict(result)
+print(f"Your friend {name} is {prediction}")
+
 4.Which Python library provides a direct implementation of the K-means clustering algorithm?
 The K-means clustering algorithm can be implemented in Python using libraries like scikit-learn. 
 The KMeans class in scikit-learn provides a direct implementation of K-means clustering.
